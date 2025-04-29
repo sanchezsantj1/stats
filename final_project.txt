@@ -1,0 +1,194 @@
+
+R version 4.4.2 (2024-10-31) -- "Pile of Leaves"
+Copyright (C) 2024 The R Foundation for Statistical Computing
+Platform: aarch64-apple-darwin20
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[R.app GUI 1.81 (8462) aarch64-apple-darwin20]
+
+[Workspace restored from /Users/josselinsanchez/.RData]
+[History restored from /Users/josselinsanchez/.Rapp.history]
+
+> data(iris)
+> head(iris)
+  Sepal.Length Sepal.Width Petal.Length Petal.Width Species
+1          5.1         3.5          1.4         0.2  setosa
+2          4.9         3.0          1.4         0.2  setosa
+3          4.7         3.2          1.3         0.2  setosa
+4          4.6         3.1          1.5         0.2  setosa
+5          5.0         3.6          1.4         0.2  setosa
+6          5.4         3.9          1.7         0.4  setosa
+> 
+> ```{r}
+Error: attempt to use zero-length variable name
+> library(ggplot2)
+> data(iris)
+> 
+> ggplot(iris, aes(x = Sepal.Length)) +
++   geom_histogram(binwidth = 0.2, fill = "skyblue", color = "black", alpha = 0.7) +
++   labs(title = "Histogram of Sepal Length", x = "Sepal Length (cm)", y = "Frequency") +
++   theme_minimal()
+> 
+> 
+> This histogram illustrates the frequency distribution of sepal lengths across all Iris species.
+Error: unexpected symbol in "This histogram"
+> 
+> ### 2. Boxplot of a Numeric Variable by a Categorical Variable
+> 
+> ```r
+Error: attempt to use zero-length variable name
+> ```{r}
+Error: attempt to use zero-length variable name
+> ggplot(iris, aes(x = Species, y = Sepal.Length, fill = Species)) +
++   geom_boxplot() +
++   labs(title = "Boxplot of Sepal Length by Species", x = "Species", y = "Sepal Length (cm)") +
++   theme_minimal()
+> 
+> This boxplot shows the median, quartiles, and potential outliers of sepal lengths for each species.
+Error: unexpected symbol in "This boxplot"
+> 
+> ### 3. Scatterplot of Two Numeric Variables
+> 
+> To explore the relationship between `Sepal.Length` and `Petal.Length`, we can plot a scatterplot.
+Error: unexpected symbol in "To explore"
+> 
+> ```r
+Error: attempt to use zero-length variable name
+> ```{r}
+Error: attempt to use zero-length variable name
+> ggplot(iris, aes(x = Sepal.Length, y = Petal.Length)) +
++   geom_point(aes(color = Species), alpha = 0.7) +
++   labs(title = "Scatterplot of Sepal Length vs. Petal Length", x = "Sepal Length (cm)", y = "Petal Length (cm)") +
++   theme_minimal() 
+> 
+> 
+> This scatterplot helps in identifying any linear or non-linear relationships between the two variables.
+Error: unexpected symbol in "This scatterplot"
+> 
+> ---
++ 
++ ## 📈 Inferential Statistics
++ 
++ ### 1. Two-Sample t-Test
++ 
++ To determine if there's a significant difference in `Sepal.Length` between two species, say `setosa` and `versicolor`, we can perform a two-sample t-test.
+Error: unexpected symbol in:
+"
+To determine"
+> 
+> ```r
+Error: attempt to use zero-length variable name
+> ```{r}
+Error: attempt to use zero-length variable name
+> setosa <- subset(iris, Species == "setosa")
+> versicolor <- subset(iris, Species == "versicolor")
+> 
+> t.test(setosa$Sepal.Length, versicolor$Sepal.Length)
+
+	Welch Two Sample t-test
+
+data:  setosa$Sepal.Length and versicolor$Sepal.Length
+t = -10.521, df = 86.538, p-value < 2.2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ -1.1057074 -0.7542926
+sample estimates:
+mean of x mean of y 
+    5.006     5.936 
+
+> 
+> 
+> This test will provide a p-value to assess if the difference in means is statistically significant.
+Error: unexpected symbol in "This test"
+> 
+> ### 2. ANOVA (Analysis of Variance)
+> 
+> To compare the means of `Sepal.Length` across all three species, we can conduct an ANOVA.
+Error: unexpected symbol in "To compare"
+> 
+> ```r
+Error: attempt to use zero-length variable name
+> ```{r}
+Error: attempt to use zero-length variable name
+> anova_result <- aov(Sepal.Length ~ Species, data = iris)
+> summary(anova_result)
+             Df Sum Sq Mean Sq F value Pr(>F)    
+Species       2  63.21  31.606   119.3 <2e-16 ***
+Residuals   147  38.96   0.265                   
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+> 
+> 
+> The ANOVA will indicate if there are any statistically significant differences in sepal lengths among the species.
+Error: unexpected symbol in "The ANOVA"
+> 
+> ### 3. Correlation Analysis
+> 
+> To assess the strength and direction of the linear relationship between `Sepal.Length` and `Petal.Length`, we can compute the Pearson correlation coefficient.
+Error: unexpected symbol in "To assess"
+> 
+> ```r
+Error: attempt to use zero-length variable name
+> ```{r}
+Error: attempt to use zero-length variable name
+> cor(iris$Sepal.Length, iris$Petal.Length)
+[1] 0.8717538
+> 
+> 
+> A correlation coefficient close to 1 or -1 indicates a strong linear relationship.
+Error: unexpected symbol in "A correlation"
+> 
+> ### 4. Linear Regression
+> 
+> To model the relationship between `Sepal.Length` and `Petal.Length`, we can fit a linear regression model.
+Error: unexpected symbol in "To model"
+> 
+> ```r
+Error: attempt to use zero-length variable name
+> ```{r}
+Error: attempt to use zero-length variable name
+> lm_model <- lm(Sepal.Length ~ Petal.Length, data = iris)
+> summary(lm_model)
+
+Call:
+lm(formula = Sepal.Length ~ Petal.Length, data = iris)
+
+Residuals:
+     Min       1Q   Median       3Q      Max 
+-1.24675 -0.29657 -0.01515  0.27676  1.00269 
+
+Coefficients:
+             Estimate Std. Error t value Pr(>|t|)    
+(Intercept)   4.30660    0.07839   54.94   <2e-16 ***
+Petal.Length  0.40892    0.01889   21.65   <2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+Residual standard error: 0.4071 on 148 degrees of freedom
+Multiple R-squared:   0.76,	Adjusted R-squared:  0.7583 
+F-statistic: 468.6 on 1 and 148 DF,  p-value: < 2.2e-16
+
+> 
+> 
+This model will provide coefficients and statistical significance to understand how `Petal.Length` predicts `Sepal.Length`.
+
+---
+In this analysis, I worked with the Iris dataset to explore how flower measurements differ between three species: Setosa, Versicolor, and Virginica. I started by looking at the shape and spread of the data using visual tools like histograms and boxplots. For example, the histogram of Sepal Length showed that most flowers had lengths clustered around the middle, with a few longer ones. When I broke that down by species in a boxplot, it became clear that each species has its own size pattern—Setosa tends to have the shortest sepals, while Virginica has the longest. A scatterplot comparing Sepal Length and Petal Length also showed a strong upward trend, hinting that these two traits are closely related.
+
+To dig deeper, I ran a few statistical tests. A t-test comparing Sepal Length between Setosa and Versicolor showed a clear difference, which means these species have distinct sepal sizes. I also ran an ANOVA to see if Sepal Length differs among all three species, and the results confirmed it does. I checked the correlation between Sepal and Petal Length and found a strong, positive link—basically, when one increases, so does the other. A simple linear regression backed this up, showing that Petal Length is a good predictor of Sepal Length. Altogether, the analysis shows that flower measurements vary significantly by species and are strongly connected to one another, which could be useful for identifying or classifying different types of irises.
+
+ 
+ 
